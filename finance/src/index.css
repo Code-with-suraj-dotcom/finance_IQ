@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+:root {
+	--fi-bg: #ffffff;
+	--fi-surface: #ffffff;
+	--fi-surface-alt: #f8f9fa;
+	--fi-text: #1a1a1a;
+	--fi-text-secondary: #6b7280;
+	--fi-muted: #9ca3af;
+	--fi-border: #e5e7eb;
+	--fi-accent: #2563eb;
+	--fi-accent-strong: #1d4ed8;
+	--fi-income: #10b981;
+	--fi-expense: #ef4444;
+	--fi-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+	--fi-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+@layer base {
+	body {
+		margin: 0;
+		min-height: 100vh;
+		color: var(--fi-text);
+		font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+		background: #ffffff;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+}
+
+@layer components {
+	.fi-page {
+		@apply mx-auto w-full max-w-5xl px-4 py-8 sm:px-6 lg:px-8;
+	}
+
+	.fi-card {
+		@apply rounded-lg border p-5 transition-shadow duration-200;
+		border-color: var(--fi-border);
+		background-color: var(--fi-surface);
+		box-shadow: var(--fi-shadow);
+	}
+
+	.fi-card:hover {
+		box-shadow: var(--fi-shadow-md);
+	}
+
+	.fi-card-alt {
+		@apply rounded-lg border p-4;
+		border-color: var(--fi-border);
+		background-color: var(--fi-surface-alt);
+	}
+
+	.fi-title {
+		@apply text-2xl font-extrabold tracking-tight;
+		color: var(--fi-text);
+	}
+
+	.fi-input {
+		@apply w-full rounded-lg border px-4 py-2.5 text-sm outline-none transition;
+		border-color: var(--fi-border);
+		background-color: #ffffff;
+		color: var(--fi-text);
+	}
+
+	.fi-input::placeholder {
+		color: var(--fi-muted);
+	}
+
+	.fi-input:focus {
+		border-color: var(--fi-accent);
+		box-shadow: 0 0 0 3px rgb(37 99 235 / 0.1);
+	}
+
+	.fi-btn-primary {
+		@apply inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-sm font-semibold transition-all duration-200;
+		background-color: var(--fi-accent);
+		color: #ffffff;
+	}
+
+	.fi-btn-primary:hover {
+		background-color: var(--fi-accent-strong);
+		transform: translateY(-1px);
+		box-shadow: var(--fi-shadow-md);
+	}
+
+	.fi-btn-primary:active {
+		transform: translateY(0);
+	}
+
+	.fi-btn-ghost {
+		@apply inline-flex items-center justify-center rounded-lg border px-4 py-2 text-sm font-medium transition-all duration-200;
+		border-color: var(--fi-border);
+		color: var(--fi-text-secondary);
+		background-color: transparent;
+	}
+
+	.fi-btn-ghost:hover {
+		background-color: var(--fi-surface-alt);
+		color: var(--fi-text);
+		border-color: var(--fi-muted);
+	}
+}
